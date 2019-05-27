@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import {HeaderComponent} from './components/header';
+import {HeaderComponent} from './index';
 import {UiModule} from '../ui/ui.module';
 
 @NgModule({

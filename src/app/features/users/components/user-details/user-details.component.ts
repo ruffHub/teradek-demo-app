@@ -26,7 +26,6 @@ export class UserDetailsComponent implements OnInit {
     this.dataService.getData(this.urlProvider.getUrlFor('users'))
       .subscribe(data => {
         this.user = data.filter(user => user.id === id)[0];
-        console.log(this.user);
       });
   }
 
