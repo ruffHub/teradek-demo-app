@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import {TableSortService} from './services/table-sort.service';
 import {SortableComponent} from './components/sortable/sortable.component';
 import {SortableTableDirective} from './directives/sortable-table.directive';
+import { TableRowComponent } from './components/table/table-row/table-row.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {SortableTableDirective} from './directives/sortable-table.directive';
     TableFilterPipe,
     SortableComponent,
     SortableTableDirective,
+    TableRowComponent,
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,7 @@ import {SortableTableDirective} from './directives/sortable-table.directive';
   exports: [
     TableComponent,
     SortableComponent,
+    TableRowComponent,
     TableFilterPipe,
     FormsModule,
   ],

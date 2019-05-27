@@ -11,12 +11,11 @@
   </thead>
 
   <tbody>
-  <tr *ngFor="let item of getTableData() | tableFilterPipe: searchTerm:searchAttr"
-      (click)="onRowClicked(item)"
-  >
-    <td *ngFor="let column of getTableSchema()">
-      {{item[column.attr]}}
-    </td>
+  <tr table-row
+      *ngFor="let item of getTableData() | tableFilterPipe: searchTerm:searchAttr"
+      [row]="item"
+      [tableSchema]="getTableSchema()"
+      (click)="onRowClicked(item)">
   </tr>
   </tbody>
 </table>
