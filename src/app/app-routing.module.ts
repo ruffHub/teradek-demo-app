@@ -1,10 +1,21 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-const routes: Routes = [];
+import {HomePageComponent} from './features/home-page';
+
+const routes: Routes = [
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component: HomePageComponent},
+  {path: 'users', loadChildren: './features/users/users.module#UsersModule'},
+  {path: '**', redirectTo: 'home'},
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes,
+      // {enableTracing: true} // <-- debugging purposes only
+    )],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

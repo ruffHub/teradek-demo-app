@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+
+    <div class="col align-self-center" style="width: 18rem;">
+      <div class="card top-cover center-block  justify-content-center" *ngIf="getUser()">
+        <img class="card-img-top"
+             src="https://i0.wp.com/www.broadcastbruce.com/wp-content/uploads/2017/02/teradek-logo-e1491798959387.png?fit=350%2C350&ssl=1"
+             alt="User-details">
+        <div class="card-body">
+          <h5 class="card-title">User details</h5>
+
+          <p class="card-text">
+            <span class="font-weight-bold">First name</span>
+            <span class="pl-2">{{getUser().firstName}}</span>
+          </p>
+
+          <p class="card-text">
+            <span class="font-weight-bold">Last name</span>
+            <span class="pl-2">{{getUser().lastName}}</span>
+          </p>
+
+          <p class="card-text">
+            <span class="font-weight-bold">Phone</span>
+            <span class="pl-2">{{getUser().phone}}</span>
+          </p>
+
+          <p class="card-text">
+            <span class="font-weight-bold">Address</span>
+            <span class="pl-2">{{getUser().address}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col"></div>
+  </div>
+</div>

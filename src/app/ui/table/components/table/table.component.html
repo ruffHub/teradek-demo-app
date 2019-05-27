@@ -1,0 +1,22 @@
+<table class="table"
+       app-sortable-table
+       (gridSortChangedEvent)="onGridSortChanged($event)"
+       [ngClass]="cssClasses">
+  <thead>
+  <tr>
+    <th *ngFor="let column of getTableSchema()" style="position: relative;"
+        sortable-column="{{column.attr}}"
+    >{{column.head}}</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let item of getTableData() | tableFilterPipe: searchTerm:searchAttr"
+      (click)="onRowClicked(item)"
+  >
+    <td *ngFor="let column of getTableSchema()">
+      {{item[column.attr]}}
+    </td>
+  </tr>
+  </tbody>
+</table>

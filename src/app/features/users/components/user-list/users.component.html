@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-sm-3">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="searchField">Search by</label>
+        </div>
+        <select class="custom-select" id="searchField" [(ngModel)]="searchAttr">
+          <option *ngFor="let item of getTableSchema()" [ngValue]="item.attr">{{item.head}}</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="col-sm-9">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control"
+               placeholder="Search"
+               [(ngModel)]="searchTerm">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <app-table
+    [cssClasses]="['table-hover']"
+    [tableData]="getTableData()"
+    [tableSchema]="getTableSchema()"
+    [searchTerm]="searchTerm"
+    [searchAttr]="searchAttr"
+    (rowClickedEvent)="onRowClicked($event)"
+  >
+  </app-table>
+</div>
+
